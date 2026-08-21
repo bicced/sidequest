@@ -1,5 +1,10 @@
 # sidequest
 
+[![tests](https://github.com/bicced/sidequest/actions/workflows/test.yml/badge.svg)](https://github.com/bicced/sidequest/actions/workflows/test.yml)
+[![PyPI](https://img.shields.io/pypi/v/sidequest.svg)](https://pypi.org/project/sidequest/)
+[![Python](https://img.shields.io/pypi/pyversions/sidequest.svg)](https://pypi.org/project/sidequest/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **Cut Claude Code token costs by sending bulk work to cheap models.** A dependency-free CLI that runs one instruction across thousands of items — classify, extract, summarise, rewrite — and writes the results to a file instead of into your agent's context window.
 
 Works with [NanoGPT](https://nano-gpt.com) (~600 models on one pay-per-prompt key), [OpenRouter](https://openrouter.ai), Groq, DeepSeek, Cerebras, Together, or a local Ollama server. Any OpenAI-compatible endpoint, really.
@@ -201,6 +206,19 @@ Yes. It is a normal CLI. Cron it, pipe it, call it from a Makefile, a CI step, o
 - [docs/claude-code.md](docs/claude-code.md) — the skill, the subagent, and why not MCP
 - [docs/nanogpt.md](docs/nanogpt.md) — NanoGPT specifics: per-call cost reporting, the model catalog
 - [docs/providers.md](docs/providers.md) — adding a gateway, using any OpenAI-compatible API
+
+## Development
+
+```bash
+git clone https://github.com/bicced/sidequest
+cd sidequest
+python -m unittest discover -s tests -v     # no dependencies to install
+```
+
+41 tests, no network calls — the mapper runs against a fake completion
+function, which is the only way to reproduce the failure modes that matter: a
+model echoing its input back, renumbering a batch, or wrapping the array in an
+object. Contributions welcome; please keep the test suite dependency-free.
 
 ## License
 
