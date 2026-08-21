@@ -5,15 +5,18 @@ build-backend = "hatchling.build"
 [project]
 name = "sidequest"
 version = "0.1.0"
-description = "Delegate bulk LLM work to cheap models. 600+ models via NanoGPT, OpenRouter, Groq or local Ollama, batched and resumable, with real per-call cost tracking."
+description = "Cut Claude Code token costs by delegating bulk LLM work to cheap models. 600+ models via NanoGPT, OpenRouter, Groq or Ollama, batched and resumable, with real per-call cost tracking."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }
 authors = [{ name = "Jeff Tseng" }]
 keywords = [
-    "llm", "nanogpt", "openrouter", "groq", "ollama", "cheap-llm",
-    "batch-processing", "classification", "claude-code", "agents",
-    "llm-cost", "openai-compatible", "cli", "data-labeling",
+    # ordered roughly by researched search volume
+    "claude-code", "openrouter", "claude-code-skills", "claude-code-plugin",
+    "claude-code-agents", "claude-code-cost", "llm-gateway", "nanogpt",
+    "llm-proxy", "openai-compatible", "cheap-llm-api", "llm-cost",
+    "token-cost", "groq", "ollama", "deepseek", "cerebras",
+    "batch-processing", "llm-classification", "data-labeling", "cli", "agents",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
