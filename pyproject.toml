@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sidequest"
+version = "0.1.0"
+description = "Delegate bulk LLM work to cheap models. 600+ models via NanoGPT, OpenRouter, Groq or local Ollama, batched and resumable, with real per-call cost tracking."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Jeff Tseng" }]
+keywords = [
+    "llm", "nanogpt", "openrouter", "groq", "ollama", "cheap-llm",
+    "batch-processing", "classification", "claude-code", "agents",
+    "llm-cost", "openai-compatible", "cli", "data-labeling",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/bicced/sidequest"
+Documentation = "https://github.com/bicced/sidequest#readme"
+Issues = "https://github.com/bicced/sidequest/issues"
+
+[project.scripts]
+sidequest = "sidequest.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sidequest"]
